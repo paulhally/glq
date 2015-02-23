@@ -15,6 +15,7 @@ package outils;
 public enum Sens 
 {
 	/**
+	 * 
 	 * Enumération des états
 	 * 
 	 */
