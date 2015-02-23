@@ -15,9 +15,7 @@ package outils;
 public enum Sens 
 {
 	/**
-	 * 
 	 * Enumération des états
-	 * 
 	 */
 	MONTEE("^"), DESCENTE("v"), INDEFINI("-");
 	
