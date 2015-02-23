@@ -1,56 +1,29 @@
-
-
 package outils;
 
-/**
- * Classe représentant une demande d'un utlisateur sur l'ascenseur
- */
 public class Demande 
 {
 	private int numEtage;
 	private Sens sens;
 	
-	/**
-	 * Constructeur initialisant l'ascenseur à l'étage 0 à l'arret
-	 */
 	public Demande()
 	{
 		this.numEtage = 0;
 		this.sens = Sens.INDEFINI;
 	}
-	
-	/**
-	 * Constructeur initialisant l'ascenseur à un étage donné avec un sens prédéfini
-	 * @param num
-	 * @param sens
-	 */
 	public Demande(int num,Sens sens)
 	{
 		this.numEtage =num;
 		this.sens = sens;
 	}
 	
-	/**
-	 * @return l'étage où l'ascenseur se trouve
-	 */
 	public int etage()
 	{
 		return this.numEtage;
 	}
-	
-	/**
-	 * @return le sens de l'ascenseur (montée, descente, indéfini)
-	 */
 	public Sens sens()
 	{
 		return this.sens;
 	}
-	
-	/**
-	 * Passe à l'ascenseur à l'étage suivant par rapport à son sens.
-	 * Si l'ascenseur est arreté on lève une exception.
-	 * @throws ExceptionCabineArretee
-	 */
 	public void passeEtageSuivant() throws ExceptionCabineArretee
 	{
 		if(this.sens.equals(Sens.MONTEE))
@@ -66,11 +39,6 @@ public class Demande
 			throw new ExceptionCabineArretee("La cabine est arrêtée");
 		}	
 	}
-	
-	/**
-	 * Teste la montée de l'ascenseur 
-	 * @return true si l'ascenseur est en montée sinon false
-	 */
 	public boolean enMontee()
 	{
 		boolean monte = false;
@@ -80,11 +48,6 @@ public class Demande
 		}
 		return monte;
 	}
-	
-	/**
-	 * Teste la descente de l'ascenseur
-	 * @return true si l'ascenseur est en descente sinon false
-	 */
 	public boolean enDescente()
 	{
 		boolean descente = false;
@@ -94,11 +57,6 @@ public class Demande
 		}	
 		return descente;
 	}
-	
-	/**
-	 * Teste l'arret de l'ascenseur
-	 * @return true si l'ascenseur est à l'arret, sinon false
-	 */
 	public boolean estIndefini()
 	{
 		boolean estIndefini = false;
@@ -108,21 +66,11 @@ public class Demande
 		}
 		return estIndefini;
 	}
-	
-	/**
-	 * 
-	 * Change le sens de l'ascenseur ou le met à l'arret.
-	 * @param newSens
-	 */
 	public void changeSens(Sens newSens)
 	{
 		this.sens = newSens;
 	}
 	@Override
-	/**
-	 * Renvoie en chaine de caractère l'étage et le sens de l'ascenseur
-	 * @return le sens et l'étage de l'ascenseur
-	 */
 	public String toString()
 	{
 		String chaine;	
@@ -130,10 +78,6 @@ public class Demande
 		return chaine;
 	}
 	@Override
-	/**
-	 * Teste l'équivalence de deux objets.
-	 * @return true si les deux objets sont équivalents
-	 */
 	public boolean equals(Object obj) 
 	{
 		if (obj == null)
